@@ -6,7 +6,7 @@ using namespace std;
 /*
 
 Author: Lucas Pereira
-Exercise: 1175 - Array Change 1
+Exercise: 2060 - Bino's Challenge
 Status: 
 Link to the problem description: https://www.urionlinejudge.com.br/judge/en/problems/view/2060
 
@@ -15,19 +15,27 @@ Link to the problem description: https://www.urionlinejudge.com.br/judge/en/prob
 void checkMult(int num,int *a,int *b,int *c,int *d) //function to check if the number read is multiple 
 														//of 2 , 3 , 4 or 5.
 {
-	if((num%2) == 0) *a++;
-	if((num%3) == 0) *b++;
-	if((num%4) == 0) *c++;
-	if((num%5) == 0) *d++;
+	if((num%2) == 0){
+		 (*a)++;
+	} 
+	if((num%3) == 0){
+		(*b)++;
+	} 
+	if((num%4) == 0){
+		(*c)++;
+	}
+	if((num%5) == 0){
+		(*d)++;
+	}
 
 };
 
 void printOutPut(int num1,int num2,int num3,int num4) // printing the outPut
 {
 	cout << num1 <<	" Multiplo(s) de 2" << endl;
-	cout << num2 <<	" Multiplo(s) de 2" << endl;
-	cout << num3 <<	" Multiplo(s) de 2" << endl;
-	cout << num3 <<	" Multiplo(s) de 2" << endl;
+	cout << num2 <<	" Multiplo(s) de 3" << endl;
+	cout << num3 <<	" Multiplo(s) de 4" << endl;
+	cout << num4 <<	" Multiplo(s) de 5" << endl;
 
 };
 
@@ -46,6 +54,7 @@ int main(int argc, char const *argv[])
 		checkMult(array[i], &mult2, &mult3,&mult4,&mult5);
 	}
 
+
 	printOutPut(mult2,mult3,mult4,mult5);
 
 
@@ -57,3 +66,4 @@ int main(int argc, char const *argv[])
 
 
 
+	
