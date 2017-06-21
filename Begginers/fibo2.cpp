@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -12,9 +13,17 @@ Link to the problem description: https://www.urionlinejudge.com.br/judge/en/prob
 
 */
 
-int fibo(int num)
+int fibo(float num)
 {
-		return (((((1 + sqrt(5))/2)^num - ((1 - sqrt(5))/2)^num) )/ sqrt(5));
+	double firstSection, secondSection, aboveSection, finalResult;
+
+	firstSection = pow(((1 + sqrt(5))/2), double(num));
+	secondSection= pow(((1 - sqrt(5))/2), double(num));
+	aboveSection = firstSection - secondSection;
+	finalResult = aboveSection/sqrt(5);
+
+	return finalResult;	
+				
 }
 
 int main(int argc, char const *argv[])
@@ -23,7 +32,8 @@ int main(int argc, char const *argv[])
 	float formule;
 
 	cin >> n;
-	formule = fibo(n);
+	formule = fibo(float(n));
+	printf("%.1lf \n", formule);
 
 	return 0;
 }
